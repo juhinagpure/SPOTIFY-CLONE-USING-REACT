@@ -61,14 +61,56 @@ export default function Body() {
                 <span>#</span>
               </div>
               <div className="col">
-                <span>#</span>
+                <span>TITLE</span>
               </div>
               <div className="col">
-                <span>#</span>
+                <span>ALBUM</span>
               </div>
               <div className="col">
-                <span>#</span>
+                <span>
+                  <AiFillClockCircle />
+                </span>
               </div>
+            </div>
+            <div className="tracks">
+              {selectedPlaylist.tracks.map(
+                (
+                  {
+                    id,
+                    name,
+                    artists,
+                    image,
+                    duration,
+                    album,
+                    context_uri,
+                    track_number,
+                  },
+                  index
+                ) => {
+                  return (
+                    <div className="row" key={id}>
+                      <div className="col">
+                        <span>{index + 1}</span>
+                      </div>
+                      <div className="col detail">
+                        <div className="image">
+                          <img src={image} alt="track" />
+                        </div>
+                        <div className="info">
+                          <span className="name">{name}</span>
+                          <span>{artists}</span>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <span>{album}</span>
+                      </div>
+                      <div className="col">
+                        <span>{duration}</span>
+                      </div>
+                    </div>
+                  );
+                }
+              )}
             </div>
           </div>
         </>
@@ -77,4 +119,27 @@ export default function Body() {
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  .playlist {
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .image {
+      img {
+        height: 15rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: #e0dede;
+      .title {
+        color: white;
+        font-size: 4rem;
+      }
+    }
+  }
+`;

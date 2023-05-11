@@ -47,7 +47,7 @@ export default function Body() {
         <>
           <div className="playlist">
             <div className="image">
-              <img src="{selectedPlaylist.image}" alt="" />
+              <img src={selectedPlaylist.image} alt={selectedPlaylist.name} />
             </div>
             <div className="details">
               <span className="type">PLAYLIST</span>
@@ -140,6 +140,12 @@ const Container = styled.div`
         color: white;
         font-size: 4rem;
       }
+    }
+  }
+  .list {
+    .header_row {
+      display: grid;
+      grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
     }
   }
 `;

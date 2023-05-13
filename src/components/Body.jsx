@@ -148,11 +148,11 @@ const Container = styled.div`
     }
   }
   .list {
-    .header_row {
+    .header-row {
       display: grid;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
-      color: #dddcdc;
       margin: 1rem 0 0 0;
+      color: #dddcdc;
       position: sticky;
       top: 15vh;
       padding: 1rem 3rem;
@@ -161,23 +161,24 @@ const Container = styled.div`
         headerBackground ? "#000000dc" : "none"};
     }
     .tracks {
-      margin: 0.2rem;
+      margin: 0 2rem;
       display: flex;
       flex-direction: column;
       margin-bottom: 5rem;
       .row {
         padding: 0.5rem 1rem;
         display: grid;
-        grid-template-columns: 0.3fr 3.1fr 1.9fr 0.1fr;
+        grid-template-columns: 0.3fr 3.1fr 2fr 0.1fr;
         &:hover {
           background-color: rgba(0, 0, 0, 0.7);
         }
         .col {
           display: flex;
           align-items: center;
-          color: dddcdc;
+          color: #dddcdc;
           img {
             height: 40px;
+            width: 40px;
           }
         }
         .detail {

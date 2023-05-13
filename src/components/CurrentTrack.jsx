@@ -15,7 +15,7 @@ export default function currentTrack() {
         }
       );
       console.log(response);
-      dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
+      //   dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
     };
     getCurrentTrack();
   }, [token, dispatch]);

@@ -36,6 +36,13 @@ const reducer = (state, action) => {
       };
     }
 
+    case reducerCases.SET_PLAYING: {
+      return {
+        ...state,
+        currentlyPlaying: action.currentlyPlaying,
+      };
+    }
+
     default:
       return state;
   }

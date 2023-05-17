@@ -27,7 +27,23 @@ export default function currentTrack() {
     };
     getCurrentTrack();
   }, [token, dispatch]);
-  return <Container>CurrentTrack</Container>;
+  return (
+    <Container>
+      {currentlyPlaying && (
+        <div className="track">
+          <div className="track_image">
+            <img src="{currentlyPlaying.image}" alt="currentlyPlaying" />
+          </div>
+          <div>
+            <div className="track_info">
+              <h4>{currentlyPlaying.name}</h4>
+              <h6>{currentlyPlaying.artists.join(", ")}</h6>
+            </div>
+          </div>
+        </div>
+      )}
+    </Container>
+  );
 }
 
 const Container = styled.div``;

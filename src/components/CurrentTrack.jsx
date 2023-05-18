@@ -37,6 +37,7 @@ export default function currentTrack() {
           <div>
             <div className="track_info">
               <h4>{currentlyPlaying.name}</h4>
+              {/* <h6>{currentlyPlaying.artists.join(", ")}</h6> */}
               <h6>{currentlyPlaying.artists.join(", ")}</h6>
             </div>
           </div>

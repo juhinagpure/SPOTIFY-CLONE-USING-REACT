@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-
-export default function currentTrack() {
+import axios from "axios";
+import { useStateProvider } from "../utils/StateProvider";
+import { reducerCases } from "../utils/Constants";
+export default function CurrentTrack() {
   const [{ token, currentlyPlaying }, dispatch] = useStateProvider();
   useEffect(() => {
     const getCurrentTrack = async () => {
@@ -22,8 +24,9 @@ export default function currentTrack() {
           artists: item.artists.map((artists) => artists.name),
           image: item.album.images[2].url,
         };
+
+        dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
       }
-      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
     };
     getCurrentTrack();
   }, [token, dispatch]);
@@ -32,7 +35,7 @@ export default function currentTrack() {
       {currentlyPlaying && (
         <div className="track">
           <div className="track_image">
-            <img src="{currentlyPlaying.image}" alt="currentlyPlaying" />
+            <img src={currentlyPlaying.image} alt="currentlyPlaying" />
           </div>
           <div>
             <div className="track_info">

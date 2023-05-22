@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <Container>
       <CurrentTrack />
+      <playControls />
     </Container>
   );
 }

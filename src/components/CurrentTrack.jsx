@@ -50,4 +50,21 @@ export default function CurrentTrack() {
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &_info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      h4 {
+        color: white;
+      }
+      h6 {
+        color: #b3b3b3;
+      }
+    }
+  }
+`;
